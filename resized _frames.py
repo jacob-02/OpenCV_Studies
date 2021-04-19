@@ -6,7 +6,7 @@ capture = cv.VideoCapture(
 while True:
     isTrue, frame = capture.read()
     frame_resized = resize(frame, 2)
-    cv.imshow('Anime', frame_resized)
+    cv.imshow('Anime Resized', frame_resized)
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
 capture.release()
