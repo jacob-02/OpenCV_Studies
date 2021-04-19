@@ -1,0 +1,35 @@
+# Target labels
+ Main
+ opencv_highgui
+ Module
+# Source files and their labels
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/include/opencv2/highgui.hpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/include/opencv2/highgui/highgui.hpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/include/opencv2/highgui/highgui_c.h
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/src/window.cpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/src/roiSelector.cpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/src/window_gtk.cpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/opencv-master/modules/highgui/src/precomp.hpp
+ Main
+ opencv_highgui
+ Module
+/home/jacob3006/PycharmProjects/learning_day_1/build/cvconfig.h
+/home/jacob3006/PycharmProjects/learning_day_1/build/opencv2/opencv_modules.hpp
