@@ -33,7 +33,22 @@ image = cv.imread('/home/jacob3006/Pictures/Screenshot from 2021-03-28 23-13-03.
 translated = translate(image, 1000, 100)
 cv.imshow('Translated', translated)
 
-rotated = rotate(image, 45)
+rotated = rotate(image, 45)  # It will rotate anticlockwise by default
 cv.imshow('Rotated', rotated)
+
+# Resizing an image
+
+resized = cv.resize(image, (500, 500), interpolation=cv.INTER_CUBIC)  # Linear and cubic for bigger, area for smaller
+cv.imshow('Big', resized)
+
+# Flipping
+
+flipped = cv.flip(image, 1)
+cv.imshow('Flipped', flipped)
+
+# Cropping
+
+cropped = image[300:400, 400:500]
+cv.imshow('Cropped', cropped)
 
 cv.waitKey(0)
