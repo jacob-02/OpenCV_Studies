@@ -10,6 +10,10 @@ cv.rectangle(img, (0, 0), (img.shape[1] // 2, img.shape[0] // 2), (250, 250, 200
 
 cv.circle(img, (250, 250), 40, (0, 250, 0), thickness=2)    # This is used to create the circle on the image following almost the same pattern as the rectangle
 
+cv.line(img, (0, 0), (300, 300), (0, 100, 0), thickness=4)  # This follows the exact same syntax as the rectangle which kinda makes sense and makes this function redundant as we could actually just use the rectangle wala with the appropriate thickness
+
+cv.putText(img, "Hello darkness smile friend", (0, 300), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0, 255, 0), thickness=2)    # This is used to put texts on the screen. Basically I have to google a bit for values regarding the font face and if I want a specific color that too. The syntax for the functions are just popping up due to the IDE being sick. So this is all pretty chill
+
 cv.imshow('Random', img)
 
 cv.waitKey(0)
