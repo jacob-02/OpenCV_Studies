@@ -13,4 +13,9 @@ cv.imshow('Grey', grey)
 hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 cv.imshow('HSV', hsv)
 
+# Converting to L*a*b
+
+lab = cv.cvtColor(image, cv.COLOR_BGR2Lab)
+cv.imshow("LAB", lab)
+
 cv.waitKey(0)
