@@ -1,11 +1,7 @@
 import cv2 as cv
-import matplotlib.pyplot as plt
 
 image = cv.imread('/home/jacob3006/Pictures/Screenshot from 2021-03-28 23-13-03.png')
 cv.imshow('Anime', image)
-
-plt.imshow(image)
-plt.show()
 
 # Direct conversions from one scale to another without converting it into bgr in between is not possible
 # Converting to greyscale
