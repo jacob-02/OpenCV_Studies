@@ -1,16 +1,24 @@
 import cv2 as cv
 import numpy as np
 
-image = cv.imread('/home/jacob3006/PycharmProjects/OpenCV_Studies/Images/img.png')
-cv.imshow('Cats', image)
+capture = cv.VideoCapture(0)
 
-blank = np.zeros(image.shape[:2], dtype='uint8')
-cv.imshow('Blank', blank)
+while True:
+    isTrue, frame = capture.read()
 
-mask = cv.circle(blank, (image.shape[1]//2, image.shape[0]//2), 70, 255, -1)
-cv.imshow('Mask', mask)
+    blank = np.zeros(frame.shape[:2], dtype='uint8')
+    cv.imshow('Blank', blank)
 
-masked = cv.bitwise_and(image, image, mask=mask)
-cv.imshow('Masked Image', masked)
+    mask = cv.circle(blank, (frame.shape[1] // 2, frame.shape[0] // 2), 100, 255, -1)
+    cv.imshow('Mask', mask)
+
+    masked1 = cv.bitwise_and(frame, frame, mask=mask)
+    cv.imshow('Anime', masked1)
+
+    if cv.waitKey(20) & 0xFF == ord('d'):
+        break
+
+capture.release()
+cv.destroyAllWindows()
 
 cv.waitKey(0)
