@@ -26,4 +26,22 @@ plt.plot(grey_hist)
 plt.xlim([0, 256])
 plt.show()
 
+# Computing histograms for colored images
+
+plt.figure()
+plt.title('Color Histogram')
+plt.xlabel('Bins')
+plt.ylabel('# of pixels')
+
+colors = ('b', 'g', 'r')
+for i, col in enumerate(colors):
+    hist = cv.calcHist([image], [i], None, [256], [0, 256])
+    plt.plot(hist, color=col)
+    plt.xlim([0, 256])
+
+plt.show()
+
+mask = cv.bitwise_and(grey, grey, mask=circle)
+cv.imshow('Grey', mask)
+
 cv.waitKey(0)
