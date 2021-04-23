@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
 
+# Remember that the frame or the masking must be done by another image of the same size.
 capture = cv.VideoCapture(0)
 
 while True:
