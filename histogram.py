@@ -1,14 +1,22 @@
 import cv2 as cv
 import matplotlib.pyplot as plt
+import numpy as np
 
 image = cv.imread('/home/jacob3006/PycharmProjects/OpenCV_Studies/Images/img.png')
 cv.imshow('Cats', image)
 
+blank = np.zeros(image.shape[:2], dtype='uint8')
+cv.imshow('Blank', blank)
+
+circle = cv.circle(blank.copy(), (image.shape[1] // 2, image.shape[0] // 2), 60, 255, -1)
+
 grey = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-cv.imshow('Grey', grey)
+
+mask = cv.bitwise_and(grey, grey, mask=circle)
+cv.imshow('Grey', mask)
 
 # GreyScale Histogram
-grey_hist = cv.calcHist([grey], [0], None, histSize=[256], ranges=[0, 256])
+grey_hist = cv.calcHist([grey], [0], mask, histSize=[256], ranges=[0, 256])
 
 plt.figure()
 plt.title('GreyScale Histogram')
