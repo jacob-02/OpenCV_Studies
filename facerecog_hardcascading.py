@@ -14,3 +14,25 @@ faces_rect = haar_cascade.detectMultiScale(grey, scaleFactor=1.8)   # This scale
 print('Number of people ', len(faces_rect))
 
 cv.waitKey(0)
+
+capture = cv.VideoCapture(0)
+
+haar_cascade = cv.CascadeClassifier('haar_face.xml')  # Reads the lines of code and stores in the variable declared
+
+while True:
+    isTrue, frames = capture.read()
+    cv.imshow('WebCam', frames)
+
+    grey = cv.cvtColor(frames, cv.COLOR_BGR2GRAY)
+    cv.imshow('Grey', grey)
+
+    faces_rect = haar_cascade.detectMultiScale(grey,
+                                               scaleFactor=1.8)  # This scale factor is perfect. Tested for more than one image
+
+    print('Number of people ', len(faces_rect))
+
+    if cv.waitKey(20) & 0xFF == ord('d'):
+        break
+
+capture.release()
+cv.destroyAllWindows()
