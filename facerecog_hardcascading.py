@@ -28,7 +28,7 @@ while True:
     grey = cv.cvtColor(frames, cv.COLOR_BGR2GRAY)
 
     faces_rect = haar_cascade.detectMultiScale(grey,
-                                               scaleFactor=1.8)  # This scale factor is perfect. Tested for more than one image
+                                               scaleFactor=1.6)  # This scale factor is perfect. Tested for more than one image
 
     print('Number of people ', len(faces_rect))
 
