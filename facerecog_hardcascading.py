@@ -8,7 +8,7 @@ faces_rect = haar_cascade.detectMultiScale(grey, scaleFactor=1.8)   # This scale
 print('Number of people ', len(faces_rect))
 
 for (x, y, w, h) in faces_rect:
-    cv.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), thickness=2)
+    cv.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), thickness=3)
 
 cv.imshow('Detected Faces', image)
 cv.waitKey(0)
@@ -26,7 +26,7 @@ while True:
     print('Number of people ', len(faces_rect))
 
     for (x, y, w, h) in faces_rect:
-        cv.rectangle(frames, (x, y), (x + w, y + h), (0, 255, 0), thickness=2)
+        cv.rectangle(frames, (x, y), (x + w, y + h), (0, 255, 0), thickness=3)
 
     cv.imshow('Detected Faces', frames)
 
