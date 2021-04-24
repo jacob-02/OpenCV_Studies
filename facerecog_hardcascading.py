@@ -1,4 +1,5 @@
 import cv2 as cv
+import cv2
 
 image = cv.imread('/home/jacob3006/Pictures/My Photos/IMG-20200207-WA0146.jpg')
 grey = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
