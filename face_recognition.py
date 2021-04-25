@@ -30,8 +30,8 @@ while True:
         label, confidence = face_recognizer.predict(faces_roi)
         print(f'Label = {people[label]} with confidence of {confidence}')
 
-        cv.putText(image, str(people[label]), (20, 20), cv.FONT_HERSHEY_COMPLEX, 1.0, (0, 255, 0), thickness=2)
-        cv.putText(image, str(confidence), (100, 100), cv.FONT_HERSHEY_COMPLEX, 1.0, (0, 255, 0), thickness=2)
+        cv.putText(image, 'The person in the window is '+str(people[label]), (20, 20), cv.FONT_HERSHEY_COMPLEX, 1.0, (0, 255, 0), thickness=1)
+        cv.putText(image, 'The confidence percentage is '+str(confidence)+'%', (150, 450), cv.FONT_HERSHEY_COMPLEX, 0.5, (0, 255, 0), thickness=1)
         cv.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), thickness=2)
 
     cv.imshow('Detected Face', image)
