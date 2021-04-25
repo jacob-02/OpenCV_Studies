@@ -1,12 +1,9 @@
 import pyautogui as py
 import time
 
-count = 5
-
 
 def capturer():
-    global count
-    count += 1
+    name = input('Enter the name of the person here ')
 
     py.hotkey('ctrl', 'alt', 't')
     time.sleep(2)
@@ -16,7 +13,7 @@ def capturer():
     py.press('enter')
     py.write('cd Images')
     py.press('enter')
-    py.write(f'mkdir {count}')
+    py.write(f'mkdir {name}')
     py.press('enter')
 
 
