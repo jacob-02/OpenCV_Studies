@@ -13,9 +13,34 @@ features = np.load('features.npy', allow_pickle=True)
 labels = np.load('labels.npy')
 
 face_recognizer = cv.face.createLBPHFaceRecognizer()
-face_recognizer.read('face_trainer.yml')
+face_recognizer.load('face_trainer.yml')
 
-image = cv.imread('Images/1/IMG_20201206_174519.jpg')
+capture = cv.VideoCapture(0)
 
-grey = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-cv.imshow('Random Person', grey)
+while True:
+    isTrue, image = capture.read()
+    cv.imshow('Webcam', image)
+
+    grey = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
+    cv.imshow('Random Person', grey)
+
+    # Detect the face in the image
+
+    face_rect = haar_cascade.detectMultiScale(grey, scaleFactor=1.6)
+
+    for (x, y, w, h) in face_rect:
+        faces_roi = grey[y:y+h, x:x+w]
+
+        label, confidence = face_recognizer.predict(faces_roi)
+        print(f'Label = {people[label]} with confidence of {confidence}')
+
+        cv.putText(image, str(people[label]), (20, 20), cv.FONT_HERSHEY_COMPLEX, 1.0, (0, 255, 0), thickness=2)
+        cv.putText(image, str(confidence), (100, 100), cv.FONT_HERSHEY_COMPLEX, 1.0, (0, 255, 0), thickness=2)
+        cv.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), thickness=2)
+
+    cv.imshow('Detected Face', image)
+    if cv.waitKey(20) & 0xFF == ord('d'):
+        break
+
+capture.release()
+cv.destroyAllWindows()
