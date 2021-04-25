@@ -9,7 +9,7 @@ people = []
 for i in os.listdir('Images'):
     people.append(i)
 
-features = np.load('features.npy')
+features = np.load('features.npy', allow_pickle=True)
 labels = np.load('labels.npy')
 
 face_recognizer = cv.face.createLBPHFaceRecognizer()
