@@ -26,7 +26,7 @@ while True:
 
     # Detect the face in the image
 
-    face_rect = haar_cascade.detectMultiScale(grey, scaleFactor=1.6)
+    face_rect = haar_cascade.detectMultiScale(grey, scaleFactor=1.3)
 
     for (x, y, w, h) in face_rect:
         faces_roi = grey[y:y+h, x:x+w]
