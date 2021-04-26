@@ -8,8 +8,8 @@ people = []
 for i in os.listdir('Images'):
     people.append(i)
 
-face_recognizer = cv.face.createLBPHFaceRecognizer()
-face_recognizer.load('face_trainer.yml')
+face_recognizer = cv.face.LBPHFaceRecognizer_create()
+face_recognizer.read('face_trainer.yml')
 
 capture = cv.VideoCapture(0)
 
